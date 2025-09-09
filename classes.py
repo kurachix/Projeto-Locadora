@@ -8,20 +8,20 @@ class Locadora:
         self.__clientes = []
         self.__filmes = []
         self.__jogos = []
-        self.__ItensLocados = []
+        self.__itensLocados = []
 
         
 
 
     # Funções Relacionadas as ações dos usuarios na locadora
     def cadastroJogo(self, titulo, plataforma, faixaEtaria): # Adiciona item à lista
-        self.__jogos[len(self.__jogos) + 1] = Jogos(titulo=titulo, plataforma=plataforma, faixaEtaria=faixaEtaria)
+        self.__jogos.append(Jogos(titulo, plataforma, faixaEtaria, True))
 
     def cadastroFilme(self, titulo, genero, duracao): # Adiciona item à lista
-        self.__filmes[len(self.__filmes) + 1] = Filmes(titulo=titulo, genero=genero, duracao=duracao)
+        self.__filmes.append(Filmes(titulo, genero, duracao, True))
 
     def cadastroCliente(self, nome, cpf, itensLocados): # Adiciona cliente à lista
-        self.__clientes[len(self.__clientes) + 1] = Clientes(nome=nome, cpf=cpf, itensLocados=itensLocados)
+        self.__clientes.append(Clientes(nome, cpf, itensLocados))
 
     def listarClientes(self): # Mostra todos os clientes cadastrados
         return self.__clientes
@@ -42,8 +42,7 @@ class Locadora:
 
 
 class Item:
-    def __init__(self, codigo, titulo, disponivel):
-        self.__codigo = codigo # Código único do item
+    def __init__(self, titulo, disponivel):
         self.__titulo = titulo # Título do filme/jogo
         self.__disponivel = disponivel # Disponibilidade
 
@@ -93,7 +92,7 @@ class Item:
 
 class Jogos(Item):
     def __init__(self, titulo, plataforma, faixaEtaria, disponivel=True):
-        super().__init__(titulo, disponivel)
+        super().__init__(titulo, disponivel=True)
         self.__plataforma = plataforma
         self.__faixaEtaria = faixaEtaria
         
