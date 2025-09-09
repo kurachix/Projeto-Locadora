@@ -23,6 +23,27 @@ def cadastro_itens():
 
         cadastro_escolha = int(input("\n Qual a sua escolha? ->"))
 
-        
+
+        if cadastro_escolha == 1:
+            
+            codigo = input("Adi")
+            titulo = 
+            plataforma = 
+            faixaEtaria = 
+            
+            
+            
+            os.system("cls")
+            LocadoraDoCarlao.cadastroJogo(codigo=codigo, titulo=titulo, plataforma=plataforma, faixaEtaria=faixaEtaria)
+            
+            os.system("cls")
+            print("Jogo adicionado com sucesso, verifique na lista de jogos")
+            while True:
+ 
+
+
+
+
+
 
 

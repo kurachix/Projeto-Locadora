@@ -5,10 +5,10 @@ class Locadora:
         self.__cidade = cidade
         self.__telefone = telefone
 
-        self.__clientes = {}
-        self.__filmes = {}
-        self.__jogos = {}
-        self.__ItensLocados = {}
+        self.__clientes = []
+        self.__filmes = []
+        self.__jogos = []
+        self.__ItensLocados = []
 
         
 
@@ -20,7 +20,7 @@ class Locadora:
     def cadastroFilme(self, codigo, titulo, genero, duracao): # Adiciona item à lista
         self.__filmes[len(self.__filmes) + 1] = Filmes(codigo=codigo, titulo=titulo, genero=genero, duracao=duracao)
 
-    def cadastrasCliente(self, nome, cpf, itensLocados): # Adiciona cliente à lista
+    def cadastroCliente(self, nome, cpf, itensLocados): # Adiciona cliente à lista
         self.__clientes[len(self.__clientes) + 1] = Clientes(nome=nome, cpf=cpf, itensLocados=itensLocados)
 
     def listarClientes(self): # Mostra todos os clientes cadastrados
