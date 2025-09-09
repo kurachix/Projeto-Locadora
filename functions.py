@@ -107,6 +107,8 @@ def listar_itens():
             else:
                 print(f"{i}. [Filme] {item.getTitulo()} | Gênero: {item._Filmes__genero} | Duração: {item._Filmes__duracao} min | {status}")
 
+            os.system("pause")
+
 # Função para emprestar ou devolver item
 def emprestar_devolver():
     os.system("cls")
@@ -154,6 +156,8 @@ def emprestar_devolver():
         cliente._Clientes__itensLocados.append(item_escolhido)
         item_escolhido.setDisponivel(False)
         print(f"\n{item_escolhido.getTitulo()} foi emprestado para {cliente._Clientes__nome}!")
+
+        os.system("pause")
 
     elif acao == 2:  # Devolver
         locados = cliente._Clientes__itensLocados
