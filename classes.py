@@ -92,8 +92,8 @@ class Item:
 
 
 class Jogos(Item):
-    def __init__(self, codigo, titulo, plataforma, faixaEtaria, disponivel=True):
-        super().__init__(codigo, titulo, disponivel)
+    def __init__(self, titulo, plataforma, faixaEtaria, disponivel=True):
+        super().__init__(titulo, disponivel)
         self.__plataforma = plataforma
         self.__faixaEtaria = faixaEtaria
         
@@ -101,8 +101,8 @@ class Jogos(Item):
         
 
 class Filmes(Item):
-    def __init__(self, codigo, titulo, genero, duracao, disponivel=True):
-        super().__init__(codigo, titulo, disponivel)
+    def __init__(self, titulo, genero, duracao, disponivel=True):
+        super().__init__(titulo, disponivel)
         self.__genero = genero
         self.__duracao = duracao
 
