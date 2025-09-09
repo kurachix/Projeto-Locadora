@@ -5,7 +5,7 @@ from classes import *
 import os
 import time
 
-LocadoraDoCarlao = Locadora("Locadora_do_Carlão", "Jundiai-SP", "11 961863232")
+LocadoraDoCarlao = Locadora("Locadora_do_Carlão", "Jundiai-SP", "11 961863232") # define os dados da locadora
 
 def cadastro_itens():
 
@@ -23,7 +23,7 @@ def cadastro_itens():
 
         cadastro_escolha = int(input("\n Qual a sua escolha? ->"))
 
-
+        # Adicionar um jogo
         if cadastro_escolha == 1:
             
             os.system("cls")
@@ -38,12 +38,12 @@ def cadastro_itens():
 
             faixaEtaria = input("Qual a faixa etaria do jogo?\n-->")
             
-            
+            # chama metodo da classe Locadora para adicionar jogo
             LocadoraDoCarlao.cadastroJogo(titulo=titulo, plataforma=plataforma, faixaEtaria=faixaEtaria)
             
             os.system("cls")
             print("Jogo adicionado com sucesso, verifique na lista de jogos")
-            
+            # Pergunta se vc quer continuar cadastrando
             while True:
                 continuar = int(input("1 - Adicionar outro produto\n0 - Sair\n--> "))
                 
@@ -51,8 +51,9 @@ def cadastro_itens():
                     break
             
             if continuar == 0:
-                break
-
+                break # sai do loop de cadastro
+        
+        # Cadastro de Filme
         if cadastro_escolha == 2:
 
             os.system("cls")
@@ -66,20 +67,24 @@ def cadastro_itens():
             os.system("cls")
 
             duracao = input("Qual a duração do filme\n-->")
-
+            
+            # chama método da classe Locadora para adicionar i filme
             LocadoraDoCarlao.cadastroFilme(titulo=titulo, genero=genero, duracao=duracao)
-
+            
+            
             while True:
                 continuar = int(input("1 - Adicionar outro produto\n0 - Sair\n--> "))
-                
+            
                 if continuar == 1 or continuar == 0:
                     break
             
             if continuar == 0:
                 break
 
+
+# Função para listar todos os itens cadastrados na locadora
 def listar_itens():
-    os.system("cls")
+    os.system("cls")    
 
     print(50 * "-")
     print("Listando todos os produtos!".center(50))
@@ -102,7 +107,7 @@ def listar_itens():
             else:
                 print(f"{i}. [Filme] {item.getTitulo()} | Gênero: {item._Filmes__genero} | Duração: {item._Filmes__duracao} min | {status}")
 
-
+# Função para emprestar ou devolver item
 def emprestar_devolver():
     os.system("cls")
     print(50 * "-")
@@ -176,7 +181,7 @@ def cadastro_cliente():
     nome = input("Digite o nome do cliente: ")
     cpf = input("Digite o CPF do cliente: ")
 
-    # Itens locados começam vazios
+    # itens locados vai começar vazios pra ir adicionando os itens emprestados
     LocadoraDoCarlao.cadastroCliente(nome, cpf, itensLocados=[])
 
     print(f"\nCliente {nome} cadastrado com sucesso!")
