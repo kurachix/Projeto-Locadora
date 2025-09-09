@@ -17,5 +17,36 @@ class Item:
         self.__titulo = titulo # Título do filme/jogo
         self.__disponivel = disponivel # Disponibilidade
 
+    # ----------------- -------------------------
+    #Metodos GETs
+
+    def getTitulo(self):
+        return self.__titulo
+    
+    def getCodigo(self):
+        return self.__codigo
+    
+    def getDisponivel(self):
+        return self.__disponivel
+    
+    # ----------------- -------------------------
+    #Metodos SETs
+
+    def setTitulo(self, titulo):
+        self.__titulo = titulo
+        return self.__titulo
+    
+    def setCodigo(self, codigo):
+        self.__codigo = codigo
+        return self.__codigo
+    
+    def setDisponivel(self, disponivel):
+        self.__disponivel = disponivel
+        return self.__disponivel
+    
+    
+
+
+
 
         
