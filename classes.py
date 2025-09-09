@@ -8,6 +8,8 @@ class Locadora:
         self.__clientes = {}
         self.__filmes = {}
         self.__jogos = {}
+        self.__ItensLocados = {}
+
         
 
 
@@ -22,7 +24,7 @@ class Locadora:
         self.__clientes[len(self.__clientes) + 1] = Clientes(nome=nome, cpf=cpf, itensLocados=itensLocados)
 
     def listarClientes(self): # Mostra todos os clientes cadastrados
-        pass
+        return self.__clientes
 
     def listarItens(self): # Mostra todos os itens cadastrados
         return self.__jogos, self.__filmes
@@ -32,6 +34,9 @@ class Locadora:
     
     def listarJogos(self):
         return self.__jogos
+    
+    def listarItensLocados(self):
+        return self.__itensLocados
     
 
 
@@ -116,7 +121,7 @@ class Clientes():
 
     def devolver(self): # Cliente devolve um item
         pass
-
+ 
     def listarItens(self): # Mostra todos os itens alugados
         pass
 
