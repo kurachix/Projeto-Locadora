@@ -78,6 +78,36 @@ def cadastro_itens():
             if continuar == 0:
                 break
 
+def listar_itens():
+    os.system("cls")
+
+    print(50 * "-")
+    print("Listando todos os produtos!".center(50))
+    print(50 * "-")
+
+    time.sleep(1)
+
+    itens = LocadoraDoCarlao.listarItens()
+
+    if not itens:
+        print("Nenhum item cadastrado.")
+    else:
+        for i, item in enumerate(itens, start=1):
+            tipo = "Jogo" if isinstance(item, Jogos) else "Filme"
+            status = "Disponível" if item.getDisponivel() else "Indisponível"
+            
+            # Mostrar mais informações dependendo do tipo
+            if tipo == "Jogo":
+                print(f"{i}. [Jogo] {item.getTitulo()} | Plataforma: {item._Jogos__plataforma} | Faixa Etária: {item._Jogos__faixaEtaria} | {status}")
+            else:
+                print(f"{i}. [Filme] {item.getTitulo()} | Gênero: {item._Filmes__genero} | Duração: {item._Filmes__duracao} min | {status}")
+
+
+
+
+
+
+
 
 
  

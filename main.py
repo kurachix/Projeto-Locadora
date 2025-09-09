@@ -8,3 +8,7 @@ print("Bem-Vindo a Locadora, iniciado o sistema!".center(50))
 print(50 * "-")
 time.sleep(3)
 
+cadastro_itens()
+listar_itens()
+
+
