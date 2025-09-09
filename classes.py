@@ -9,4 +9,13 @@ class Locadora:
         self.__filmes = {}
         self.__jogos = {}
 
-assert
+
+
+class Item:
+    def __init__(self, codigo, titulo, disponivel):
+        self.__codigo = codigo # Código único do item
+        self.__titulo = titulo # Título do filme/jogo
+        self.__disponivel = disponivel # Disponibilidade
+
+
+        
