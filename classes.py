@@ -24,12 +24,16 @@ class Locadora:
     def listarClientes(): # Mostra todos os clientes cadastrados
         pass
 
-    def listarItens(): # Mostra todos os itens cadastrados
-        pass
-
+    def listarItens(self): # Mostra todos os itens cadastrados
+        return self.__jogos, self.__filmes
+    
+    def listarFilmes(self):
+        return self.__filmes
+    
+    def listarJogos(self):
+        return self.__filmes
     
 
-    
 
 
 class Item:
