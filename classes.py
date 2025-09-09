@@ -12,16 +12,16 @@ class Locadora:
 
 
     # Funções Relacionadas as ações dos usuarios na locadora
-    def cadastroJogo(self, codigo, titulo, disponivel): # Adiciona item à lista
-        self.__jogos[len(self.__jogos) + 1] = Jogos(codigo=codigo, titulo=titulo, disponivel=disponivel)
+    def cadastroJogo(self, codigo, titulo, plataforma, faixaEtaria): # Adiciona item à lista
+        self.__jogos[len(self.__jogos) + 1] = Jogos(codigo=codigo, titulo=titulo, plataforma=plataforma, faixaEtaria=faixaEtaria)
 
-    def cadastroFilme(self, codigo, titulo, disponivel): # Adiciona item à lista
-        self.__filmes[len(self.__filmes) + 1] = Filmes(codigo=codigo, titulo=titulo, disponivel=disponivel)
+    def cadastroFilme(self, codigo, titulo, genero, duracao): # Adiciona item à lista
+        self.__filmes[len(self.__filmes) + 1] = Filmes(codigo=codigo, titulo=titulo, genero=genero, duracao=duracao)
 
     def cadastrasCliente(self, nome, cpf, itensLocados): # Adiciona cliente à lista
         self.__clientes[len(self.__clientes) + 1] = Clientes(nome=nome, cpf=cpf, itensLocados=itensLocados)
 
-    def listarClientes(): # Mostra todos os clientes cadastrados
+    def listarClientes(self): # Mostra todos os clientes cadastrados
         pass
 
     def listarItens(self): # Mostra todos os itens cadastrados
@@ -31,7 +31,7 @@ class Locadora:
         return self.__filmes
     
     def listarJogos(self):
-        return self.__filmes
+        return self.__jogos
     
 
 
@@ -72,24 +72,23 @@ class Item:
     # ----------------- -------------------------
     #Metodos Funções
 
-    def alugarFilmes():
+    def alugarFilmes(self):
         pass
 
-    def alugarJogos():
+    def alugarJogos(self):
         pass
 
-    def devolverJogos():
+    def devolverJogos(self):
         pass
 
-    def devolverFilmes():
+    def devolverFilmes(self):
         pass
     
 
 
 class Jogos(Item):
-    def __init__(self, codigo, titulo, plataforma, faixaEtaria):
-        self.__codigo = codigo
-        self.__titulo = titulo
+    def __init__(self, codigo, titulo, plataforma, faixaEtaria, disponivel=True):
+        super().__init__(codigo, titulo, disponivel)
         self.__plataforma = plataforma
         self.__faixaEtaria = faixaEtaria
         
@@ -97,9 +96,8 @@ class Jogos(Item):
         
 
 class Filmes(Item):
-    def __init__(self, codigo, titulo, genero, duracao):
-        self.__codigo = codigo
-        self.__titulo = titulo
+    def __init__(self, codigo, titulo, genero, duracao, disponivel=True):
+        super().__init__(codigo, titulo, disponivel)
         self.__genero = genero
         self.__duracao = duracao
 
@@ -113,13 +111,13 @@ class Clientes():
         self.__itensLocados = itensLocados
 
     
-    def locar(): # Cliente aluga um item
+    def locar(self): # Cliente aluga um item
         pass
 
-    def devolver(): # Cliente devolve um item
+    def devolver(self): # Cliente devolve um item
         pass
 
-    def listarItens(): # Mostra todos os itens alugados
+    def listarItens(self): # Mostra todos os itens alugados
         pass
 
 
