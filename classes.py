@@ -56,10 +56,22 @@ class Item:
 
 
 class Jogos(Item):
+    def __init__(self, codigo, titulo, plataforma, faixaEtaria):
+        self.__codigo = codigo
+        self.__titulo = titulo
+        self.__plataforma = plataforma
+        self.__faixaEtaria = faixaEtaria
+        
 
         
 
 class Filmes(Item):
+    def __init__(self, codigo, titulo, genero, duracao):
+        self.__codigo = codigo
+        self.__titulo = titulo
+        self.__genero = genero
+        self.__duracao = duracao
+        
     
 
 
