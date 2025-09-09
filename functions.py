@@ -167,6 +167,22 @@ def emprestar_devolver():
         print(f"\n{item_escolhido.getTitulo()} foi devolvido com sucesso!")
 
 
+def cadastro_cliente():
+    os.system("cls")
+    print(50 * "-")
+    print("Cadastro de Cliente".center(50))
+    print(50 * "-")
+
+    nome = input("Digite o nome do cliente: ")
+    cpf = input("Digite o CPF do cliente: ")
+
+    # Itens locados começam vazios
+    LocadoraDoCarlao.cadastroCliente(nome, cpf, itensLocados=[])
+
+    print(f"\nCliente {nome} cadastrado com sucesso!")
+
+
+
 
 
 
