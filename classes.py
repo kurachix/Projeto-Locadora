@@ -9,5 +9,4 @@ class Locadora:
         self.__filmes = {}
         self.__jogos = {}
 
-
-        
+assert
