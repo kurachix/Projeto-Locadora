@@ -10,6 +10,15 @@ class Locadora:
         self.__jogos = {}
 
 
+    # Funções Relacionadas as ações dos usuarios na locadora
+    def cadastroJogo(self, codigo, titulo, disponivel):
+        self.__jogos[len(self.__jogos) + 1] = Jogos(codigo=codigo, titulo=titulo, disponivel=disponivel)
+
+    def cadastroFilme(self, codigo, titulo, disponivel):
+        self.__filmes[len(self.__filmes) + 1] = Filmes(codigo=codigo, titulo=titulo, disponivel=disponivel)
+
+    
+
 
 class Item:
     def __init__(self, codigo, titulo, disponivel):
@@ -44,7 +53,15 @@ class Item:
         self.__disponivel = disponivel
         return self.__disponivel
     
+
+
+class Jogos(Item):
+
+        
+
+class Filmes(Item):
     
+
 
 
 
