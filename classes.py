@@ -71,6 +71,24 @@ class Filmes(Item):
         self.__titulo = titulo
         self.__genero = genero
         self.__duracao = duracao
+
+
+class Clientes():
+    def __init__(self, nome, cpf, itensLocados):
+        self.__nome = nome
+        self.__cpf = cpf
+        self.__itensLocados = itensLocados
+
+    
+    def locar():
+        pass
+
+    def devolver():
+        pass
+
+    def listarItens():
+        pass
+    
         
     
 
