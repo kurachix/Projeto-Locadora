@@ -8,7 +8,6 @@ class Locadora:
         self.__clientes = []
         self.__filmes = []
         self.__jogos = []
-        self.__itensLocados = []
 
         
 
@@ -52,9 +51,6 @@ class Item:
     def getTitulo(self):
         return self.__titulo
     
-    def getCodigo(self):
-        return self.__codigo
-    
     def getDisponivel(self):
         return self.__disponivel
     
@@ -64,10 +60,6 @@ class Item:
     def setTitulo(self, titulo):
         self.__titulo = titulo
         return self.__titulo
-    
-    def setCodigo(self, codigo):
-        self.__codigo = codigo
-        return self.__codigo
     
     def setDisponivel(self, disponivel):
         self.__disponivel = disponivel
@@ -92,7 +84,7 @@ class Item:
 
 class Jogos(Item):
     def __init__(self, titulo, plataforma, faixaEtaria, disponivel=True):
-        super().__init__(titulo, disponivel=True)
+        super().__init__(titulo, disponivel)
         self.__plataforma = plataforma
         self.__faixaEtaria = faixaEtaria
         
