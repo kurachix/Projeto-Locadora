@@ -14,11 +14,11 @@ class Locadora:
 
 
     # Funções Relacionadas as ações dos usuarios na locadora
-    def cadastroJogo(self, codigo, titulo, plataforma, faixaEtaria): # Adiciona item à lista
-        self.__jogos[len(self.__jogos) + 1] = Jogos(codigo=codigo, titulo=titulo, plataforma=plataforma, faixaEtaria=faixaEtaria)
+    def cadastroJogo(self, titulo, plataforma, faixaEtaria): # Adiciona item à lista
+        self.__jogos[len(self.__jogos) + 1] = Jogos(titulo=titulo, plataforma=plataforma, faixaEtaria=faixaEtaria)
 
-    def cadastroFilme(self, codigo, titulo, genero, duracao): # Adiciona item à lista
-        self.__filmes[len(self.__filmes) + 1] = Filmes(codigo=codigo, titulo=titulo, genero=genero, duracao=duracao)
+    def cadastroFilme(self, titulo, genero, duracao): # Adiciona item à lista
+        self.__filmes[len(self.__filmes) + 1] = Filmes(titulo=titulo, genero=genero, duracao=duracao)
 
     def cadastroCliente(self, nome, cpf, itensLocados): # Adiciona cliente à lista
         self.__clientes[len(self.__clientes) + 1] = Clientes(nome=nome, cpf=cpf, itensLocados=itensLocados)
