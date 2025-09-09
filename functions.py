@@ -103,6 +103,68 @@ def listar_itens():
                 print(f"{i}. [Filme] {item.getTitulo()} | Gênero: {item._Filmes__genero} | Duração: {item._Filmes__duracao} min | {status}")
 
 
+def emprestar_devolver():
+    os.system("cls")
+    print(50 * "-")
+    print("Emprestar/Devolver Itens".center(50))
+    print(50 * "-")
+    time.sleep(1)
+
+    # Escolher cliente
+    clientes = LocadoraDoCarlao.listarClientes()
+    if not clientes:
+        print("Nenhum cliente cadastrado.")
+        return
+
+    print("\nClientes cadastrados:")
+    for i, c in enumerate(clientes, start=1):
+        print(f"{i}. {c._Clientes__nome}")
+    
+    escolha_cliente = int(input("\nEscolha o cliente pelo número: ")) - 1
+    cliente = clientes[escolha_cliente]
+
+    # Escolher ação
+    print("\nO que deseja fazer?")
+    print("1 -> Emprestar item")
+    print("2 -> Devolver item")
+    acao = int(input("--> "))
+
+    itens = LocadoraDoCarlao.listarItens()
+
+    if acao == 1:  # Emprestar
+        disponiveis = [item for item in itens if item.getDisponivel()]
+        if not disponiveis:
+            print("Não há itens disponíveis para empréstimo.")
+            return
+
+        print("\nItens disponíveis:")
+        for i, item in enumerate(disponiveis, start=1):
+            tipo = "Jogo" if isinstance(item, Jogos) else "Filme"
+            print(f"{i}. [{tipo}] {item.getTitulo()}")
+
+        escolha_item = int(input("\nEscolha o item pelo número: ")) - 1
+        item_escolhido = disponiveis[escolha_item]
+
+        # Emprestar
+        cliente._Clientes__itensLocados.append(item_escolhido)
+        item_escolhido.setDisponivel(False)
+        print(f"\n{item_escolhido.getTitulo()} foi emprestado para {cliente._Clientes__nome}!")
+
+    elif acao == 2:  # Devolver
+        locados = cliente._Clientes__itensLocados
+        if not locados:
+            print(f"{cliente._Clientes__nome} não possui itens para devolver.")
+            return
+
+        print("\nItens locados pelo cliente:")
+        for i, item in enumerate(locados, start=1):
+            tipo = "Jogo" if isinstance(item, Jogos) else "Filme"
+            print(f"{i}. [{tipo}] {item.getTitulo()}")
+
+        escolha_item = int(input("\nEscolha o item pelo número: ")) - 1
+        item_escolhido = locados.pop(escolha_item)
+        item_escolhido.setDisponivel(True)
+        print(f"\n{item_escolhido.getTitulo()} foi devolvido com sucesso!")
 
 
 
