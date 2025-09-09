@@ -8,14 +8,26 @@ class Locadora:
         self.__clientes = {}
         self.__filmes = {}
         self.__jogos = {}
+        
 
 
     # Funções Relacionadas as ações dos usuarios na locadora
-    def cadastroJogo(self, codigo, titulo, disponivel):
+    def cadastroJogo(self, codigo, titulo, disponivel): # Adiciona item à lista
         self.__jogos[len(self.__jogos) + 1] = Jogos(codigo=codigo, titulo=titulo, disponivel=disponivel)
 
-    def cadastroFilme(self, codigo, titulo, disponivel):
+    def cadastroFilme(self, codigo, titulo, disponivel): # Adiciona item à lista
         self.__filmes[len(self.__filmes) + 1] = Filmes(codigo=codigo, titulo=titulo, disponivel=disponivel)
+
+    def cadastrasCliente(self, nome, cpf, itensLocados): # Adiciona cliente à lista
+        self.__clientes[len(self.__clientes) + 1] = Clientes(nome=nome, cpf=cpf, itensLocados=itensLocados)
+
+    def listarClientes(): # Mostra todos os clientes cadastrados
+        pass
+
+    def listarItens(): # Mostra todos os itens cadastrados
+        pass
+
+    
 
     
 
@@ -53,6 +65,21 @@ class Item:
         self.__disponivel = disponivel
         return self.__disponivel
     
+    # ----------------- -------------------------
+    #Metodos Funções
+
+    def alugarFilmes():
+        pass
+
+    def alugarJogos():
+        pass
+
+    def devolverJogos():
+        pass
+
+    def devolverFilmes():
+        pass
+    
 
 
 class Jogos(Item):
@@ -73,6 +100,8 @@ class Filmes(Item):
         self.__duracao = duracao
 
 
+
+
 class Clientes():
     def __init__(self, nome, cpf, itensLocados):
         self.__nome = nome
@@ -80,14 +109,16 @@ class Clientes():
         self.__itensLocados = itensLocados
 
     
-    def locar():
+    def locar(): # Cliente aluga um item
         pass
 
-    def devolver():
+    def devolver(): # Cliente devolve um item
         pass
 
-    def listarItens():
+    def listarItens(): # Mostra todos os itens alugados
         pass
+
+
     
         
     
