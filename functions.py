@@ -26,19 +26,60 @@ def cadastro_itens():
 
         if cadastro_escolha == 1:
             
-            codigo = input("Adi")
-            titulo = 
-            plataforma = 
-            faixaEtaria = 
-            
-            
-            
             os.system("cls")
-            LocadoraDoCarlao.cadastroJogo(codigo=codigo, titulo=titulo, plataforma=plataforma, faixaEtaria=faixaEtaria)
+
+            titulo = input("Qual o titulo do jogo?\n-->")
+
+            os.system("cls")
+            
+            plataforma = input("Qual a plataforma do jogo?\n-->")
+
+            os.system("cls")
+
+            faixaEtaria = input("Qual a faixa etaria do jogo?\n-->")
+            
+            
+            LocadoraDoCarlao.cadastroJogo(titulo=titulo, plataforma=plataforma, faixaEtaria=faixaEtaria)
             
             os.system("cls")
             print("Jogo adicionado com sucesso, verifique na lista de jogos")
+            
             while True:
+                continuar = int(input("1 - Adicionar outro produto\n0 - Sair\n--> "))
+                
+                if continuar == 1 or continuar == 0:
+                    break
+            
+            if continuar == 0:
+                break
+
+        if cadastro_escolha == 2:
+
+            os.system("cls")
+
+            titulo = input("Qual o titulo do filme?\n-->")
+
+            os.system("cls")
+
+            genero = input("Qual o genero do filme?\n-->")
+
+            os.system("cls")
+
+            duracao = input("Qual a duração do filme\n-->")
+
+            LocadoraDoCarlao.cadastroFilme(titulo=titulo, genero=genero, duracao=duracao)
+
+            while True:
+                continuar = int(input("1 - Adicionar outro produto\n0 - Sair\n--> "))
+                
+                if continuar == 1 or continuar == 0:
+                    break
+            
+            if continuar == 0:
+                break
+
+
+
  
 
 
