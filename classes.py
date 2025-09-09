@@ -5,10 +5,13 @@ class Locadora:
         self.__cidade = cidade
         self.__telefone = telefone
 
-        self.__clientes = []
-        self.__itens = []  # única lista
-        self.__itensLocados = []
+         # Lista pra armazenarcos clientes e itens 
+        self.__clientes = [] # lista pra cadastrar os clientes
+        self.__itens = []  # lista de itens (clientes e jogos)
 
+    # -----------------------------
+    # Métodos de cadastro
+    # -----------------------------
 
     def cadastroJogo(self, titulo, plataforma, faixaEtaria):
         self.__itens.append(Jogos(titulo, plataforma, faixaEtaria, True))
@@ -19,15 +22,17 @@ class Locadora:
     def cadastroCliente(self, nome, cpf, itensLocados):
         self.__clientes.append(Clientes(nome, cpf, itensLocados))
 
+
+    # -----------------------------
+    # Métodos de listagem
+    # -----------------------------
+
+
     def listarClientes(self):
         return self.__clientes
 
     def listarItens(self):
         return self.__itens
-
-
-    
-
 
 
 class Item:
@@ -56,63 +61,39 @@ class Item:
         return self.__disponivel
     
     # ----------------- -------------------------
-    #Metodos Funções
-
-    def alugarFilmes(self):
-        pass
-
-    def alugarJogos(self):
-        pass
-
-    def devolverJogos(self):
-        pass
-
-    def devolverFilmes(self):
-        pass
     
 
 
 class Jogos(Item):
     def __init__(self, titulo, plataforma, faixaEtaria, disponivel=True):
-        super().__init__(titulo, disponivel)
-        self.__plataforma = plataforma
-        self.__faixaEtaria = faixaEtaria
+        super().__init__(titulo, disponivel) # chama o construtor da classe item, herdando memo
+        self.__plataforma = plataforma # plataforma do jogo 
+        self.__faixaEtaria = faixaEtaria # requisita a faixa etaria do jogo
 
     def __str__(self):
+        # representa o objeto como string, pra nao exibir um monte de codigo 
         return f"Jogo: {self.getTitulo()} | Plataforma: {self.__plataforma} | Faixa Etária: {self.__faixaEtaria}"
     
         
 
-        
 
 class Filmes(Item):
     def __init__(self, titulo, genero, duracao, disponivel=True):
-        super().__init__(titulo, disponivel)
-        self.__genero = genero
-        self.__duracao = duracao
+        super().__init__(titulo, disponivel) # chama o construtor da classe item, herdando memo
+        self.__genero = genero # genero do filme
+        self.__duracao = duracao # duracao do filme
 
     def __str__(self):
+        # representa o objeto como string, pra nao exibir um monte de codigo
         return f"Filme: {self.getTitulo()} | Gênero: {self.__genero} | Duração: {self.__duracao} min"
-
-
-
 
 
 class Clientes():
     def __init__(self, nome, cpf, itensLocados):
-        self.__nome = nome
-        self.__cpf = cpf
-        self.__itensLocados = itensLocados
+        self.__nome = nome # nome do cliente
+        self.__cpf = cpf #cpf do cliente
+        self.__itensLocados = itensLocados #mostra os itens q foram emprestados
 
-    
-    def locar(self): # Cliente aluga um item
-        pass
-
-    def devolver(self): # Cliente devolve um item
-        pass
- 
-    def listarItens(self): # Mostra todos os itens alugados
-        pass
 
 
     
