@@ -19,9 +19,10 @@ while True:
         print("")
         print("SELECIONE A OPÇÃO QUE DESEJA")
         print("1 - CADASTRO DE CLIENTE")
-        print("2 - LISTAR")
+        print("2 - LISTAR ITEM")
         print("3 - CADASTRO DE ITEM")
         print("4 - EMPRESTAR/DEVOLVER")
+        print("5 - LISTAR CLIENTES")
         print("0 - SAIR")
         escolha = int(input("--> "))
 
@@ -34,6 +35,8 @@ while True:
                 cadastro_itens()
             case 4:
                 emprestar_devolver()
+            case 5:
+                listar_clientes()
             case 0:
                 print("SAINDO...")
                 os.system("pause")

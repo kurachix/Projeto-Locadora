@@ -190,6 +190,25 @@ def cadastro_cliente():
 
     print(f"\nCliente {nome} cadastrado com sucesso!")
 
+def listar_clientes():
+    os.system("cls")    
+
+    print(50 * "-")
+    print("Listando todos os clientes!".center(50))
+    print(50 * "-")
+
+    time.sleep(1)
+
+    clientes = LocadoraDoCarlao.listarClientes()
+
+    if not clientes:
+        print("Nenhum cliente cadastrado.")
+    else:
+        for i, cliente in enumerate(clientes, start=1):
+            print(f"{i}. {cliente._Clientes__nome} | CPF: {cliente._Clientes__cpf} | Itens Locados: {len(cliente._Clientes__itensLocados)}")
+
+    os.system("pause")
+
 
 
 
