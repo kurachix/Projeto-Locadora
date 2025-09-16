@@ -8,6 +8,7 @@ print("Bem-Vindo a Locadora, iniciado o sistema!".center(50))
 print(50 * "-")
 time.sleep(3)
 
+#loop controlador do menu principal
 while True:
     try:
         os.system("cls")
@@ -44,10 +45,12 @@ while True:
             case _:
                 print("ESCOLHA INVALIDA")
                 os.system("pause")
+        # menu principal
 
     except Exception as e:
         print(f"Ocorreu um erro Inesperado: {e}")
         os.system("pause")
+        # esse "e" é pra mostrar o erro que aconteceu, caso ocorra algum erro
 
 
 
